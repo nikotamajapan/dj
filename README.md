@@ -33,3 +33,5 @@ venv で開発環境作る
  1137  python3 manage.py migrate
  動いたっぽい
  1138  python3 manage.py runserver
+ 
+ 2が終わったから次は３から
