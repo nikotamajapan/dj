@@ -1,0 +1,56 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> 
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+   <title>-blog- </title>
+</head>
+<body>
+    <div class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a href="/" class="navbar_brand">blog</a>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a href="/" class="nav-link">home</a>
+                </li>
+                {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a href="" class="nav-link">toukou</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link">log-out</a>
+                    </li>
+                    
+                    {% else %}
+                    <li class="nav-item">
+                        <a href="" class="nav-link">sign-up</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link">log-in</a>
+                    </li>
+
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+    
+    <main>
+        <div class="container">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </main>
+
+    <footer class="py-2 pg-dark">
+        <p class="m-0 text-center text-white">copyright &copy; Django startup 2020</p>
+    </footer>
+
+    {% block extra_js %}
+    {% endblock %}
+
+</body>
+</html>
