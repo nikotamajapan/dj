@@ -1,6 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic import View
 from .models import Post
+from .forms import PostForm
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 class IndexView(View):
@@ -17,4 +19,28 @@ class PostDetailView(View):
         return render(request, 'app/post_detail.html', {
             'post_data': post_data
         })
+    
+class CreatePostView(View):
+    def get(self, request, *args, **kwargs):
+        form = PostForm(request.POST or None)
+        return render(request, 'app/post_form.html', {
+            'form':form
+        })
+
+    
+    def post(self, request, *args, **kwargs):
+        form = PostForm(request.POST or None)
+        
+        if form.is_valid():
+            post_data = Post()
+            post_data.author = request.user
+            post_data.title = form.cleaned_data['title']
+            post_data.content = form.cleaned_data['content']
+            post_data.save()
+            return redirect('post_detail', post_data.id)
+
+        return render(request, 'app/post_form.html', {
+            'form':form
+        })
+
     
