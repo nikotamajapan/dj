@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<h2 class="my-4">{{ post_data.title }}</he>
+<h2 class="my-4">{{ post_data.title }}</h2>
 <hr>
 <p>{{ post_data.created }} by {{ post_data.author }}</p>
 <hr>
@@ -11,7 +11,7 @@
     <hr>
     <div class="d-flex mb-5">
         <a href="{% url 'post_edit' post_data.id %}" class="btn btn-warning mr-2">henshu suru</a>
-        <a href="" class="btn btn-warning ">sakujyo suru</a>
+        <a href="{% url 'post_delete' post_data.id %}" class="btn btn-warning ">sakujyo suru</a>
     </div>
 {% endif %}
     
