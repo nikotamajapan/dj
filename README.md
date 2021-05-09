@@ -1,7 +1,6 @@
 # dj
 
---mbp
-
+https://www.youtube.com/watch?v=NeGGafSMov8&list=PLoSZs76tLtJihI7ME-qhzDpBOQy4yILcW&index=1
 
 参考
 https://note.com/hathle/n/n7a1cb24695aa#2TO6g
