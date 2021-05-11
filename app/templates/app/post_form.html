@@ -1,18 +1,19 @@
 {% extends "app/base.html" %}
 {% load widget_tweaks %}
 
-
-
 {% block content %}
 
 <div class="my-4">
     <h2>toukou</h2>
 </div>
 
-<form method="post">
+<form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     <div class="formpost">
         {% render_field form.title class="form-control" placeholder="title input" %}
+    </div>
+    <div class="formpost">
+        {{ form.image }}
     </div>
     <div class="formpost">
         {% render_field form.content class="form-control" placeholder="honbun input" %}
