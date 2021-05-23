@@ -9,7 +9,9 @@ https://note.com/hathle/n/n7a1cb24695aa#2TO6g
 ギットリポジトリ作ってつなぐ　の設定
 1081  echo "# dj" >> README.md\ngit init\ngit add README.md\ngit commit -m "first commit"\ngit branch -M main\ngit remote add origin git@github.com:nikotamajapan/dj.git\ngit push -u origin main
 
-venv で開発環境作る
+venv で開発環境作る -　違うパソコンでやるときは環境構築１０８２から１０８５までやらないと動かない
+
+
  1082  python3 -m venv myvenv
  パスを通す
  1083  source myvenv/bin/activate
@@ -17,6 +19,10 @@ venv で開発環境作る
  1084  pip3 install --upgrade pip setuptools
  必要なツールをファイルに用意
  1085  pip3 install -r requirements.txt
+ 
+ -　違うパソコンでやるときは環境構築１０８２から１０８５までやらないと動かない
+
+
  ジャンゴプロジェクト始まりの呪文
  1086  django-admin startproject mysite .
  マイグレートはデータベースとか？

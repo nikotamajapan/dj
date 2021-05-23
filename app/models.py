@@ -3,6 +3,12 @@ from django.db import models
 from django.utils import timezone
 
 
+class Category(models.Model):
+    name = models.CharField('category', max_length=100)
+
+    def __str__(self):
+        return self.name
+
 class Post(models.Model):
 	author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
 	title = models.CharField("タイトル", max_length=200)

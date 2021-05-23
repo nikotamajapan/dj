@@ -1,8 +1,6 @@
 {% extends "app/base.html" %}
 {% load widget_tweaks %}
 
-
-
 {% block content %}
 
 <div class="my-4">
@@ -16,6 +14,12 @@
     </div>
     <div class="formpost">{{ form.image }}</div>
 
+    <div class="formpost">
+        {% render_field form.category class="form-control" placeholder="input category" %}
+    </div>
+    <div class="formpost">
+        {{ form.image }}
+    </div>
     <div class="formpost">
         {% render_field form.content class="form-control" placeholder="honbun input" %}
     </div>
