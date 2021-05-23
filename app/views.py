@@ -43,7 +43,8 @@ class CreatePostView(LoginRequiredMixin, View):
             post_data.category = category_data
             post_data.content = form.cleaned_data['content']
             if request.FILES:
-                post_data.image = request.FILES.get('image')
+                post_data.image = request.FILES.get('image') # 追加            
+
             post_data.save()
             return redirect('post_detail', post_data.id)
 
@@ -59,9 +60,9 @@ class PostEditView(LoginRequiredMixin, View):
             request.POST or None,
             initial = {
                 'title': post_data.title,
-                'category': post_data.category,
                 'content': post_data.content,
-                'image': post_data.image,
+                'image': post_data.image, # 追加
+
             }
         )
 
@@ -75,12 +76,10 @@ class PostEditView(LoginRequiredMixin, View):
         if form.is_valid():
             post_data = Post.objects.get(id=self.kwargs['pk'])
             post_data.title = form.cleaned_data['title']
-            category = form.cleaned_data['category']
-            category_data = Category.objects.get(name=category)
-            post_data.category = category_data
-            post_data.content = form.cleaned_data['content']    
+            post_data.content = form.cleaned_data['content']
             if request.FILES:
-                post_data.image = request.FILES.get('image')                        
+                post_data.image = request.FILES.get('image') # 追加
+
             post_data.save()
             return redirect('post_detail', self.kwargs['pk'])
 
