@@ -19,6 +19,10 @@ venv で開発環境作る -　違うパソコンでやるときは環境構築�
  1084  pip3 install --upgrade pip setuptools
  必要なツールをファイルに用意
  1085  pip3 install -r requirements.txt
+ 
+ -　違うパソコンでやるときは環境構築１０８２から１０８５までやらないと動かない
+
+
  ジャンゴプロジェクト始まりの呪文
  1086  django-admin startproject mysite .
  マイグレートはデータベースとか？
