@@ -4,6 +4,7 @@ from .models import Post, Category
 from .forms import PostForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db.models import Q
+
 from functools import reduce
 from operator import and_
 
@@ -122,6 +123,7 @@ class CategoryView(View):
         })
 
 class SearchView(View):
+    
     def get(self, request, *args, **kwargs):
         post_data = Post.objects.order_by('-id')
         keyword = request.GET.get('keyword')
@@ -132,8 +134,9 @@ class SearchView(View):
             for word in keyword:
                 if not word in exclusion_list:
                     query_list += word
-                query = reduce(and_, [Q(tytle__icontains=q) | Q(content__icontains=q) for q in query_list])
-                post_data = post_data.filter(query)
+                
+            query = reduce(and_, [Q(title__icontains=q) | Q(content__icontains=q) for q in query_list])
+            post_data = post_data.filter(query)
 
         return render(request, 'app/index.html', {
             'keyword': keyword,

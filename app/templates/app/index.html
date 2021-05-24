@@ -5,7 +5,7 @@
 <div class="row my-4">
     <div class="col-md-8">
         {% if keyword %}
-        <h4 class="mb-4"> {{ keyword }} no kensaku kekka</h4>
+        <h4 class="mb-4"> 『{{ keyword }}』 no kensaku kekka</h4>
         {% endif %}
         {% for post in post_data %}
         <div class="card mb-4">
@@ -62,9 +62,11 @@
         <div class="card my-4">
             <h5 class="card-header">kensaku</h5>
             <div class="card-body">
-                <form action="{% url 'search' %}" method="get" class="input_group"></form>
-                <input type="text" class="form-control" name='keyword' placeholder="blog kensaku">
-                <button class="btn btn-warning ml-2" type='submit'>kensaku</button>
+                <form method="get" action="{% url 'search' %}" class="input-group">
+                    <input type="text" class="form-control" name='keyword'
+                        placeholder="blog kensaku">
+                    <button class="btn btn-warning ml-2" type='submit'>kensaku</button>
+                </form>
             </div>
         </div>
     </div>
