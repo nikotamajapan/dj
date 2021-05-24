@@ -40,3 +40,12 @@ venv で開発環境作る -　違うパソコンでやるときは環境構築�
  
  3が終わった
  
+Django入門ブログ新機能 レッスン3(検索機能)
+が終わった
+makemigration とか　runserver 　のエラーはググれば直った
+htmlのタグの位置とかタイポとか間違えてすごい苦労する
+とりあえず終わった
+
+次は
+Djangoポートフォリオサイト構築チュートリアル レッスン1
+https://www.youtube.com/watch?v=BxQY3D9s_Mc&list=PLoSZs76tLtJhf_xy-n2QGVurW5nWQNW8g
